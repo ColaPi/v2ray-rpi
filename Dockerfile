@@ -3,7 +3,8 @@ FROM balenalib/raspberrypi3-alpine:latest-build
 ENV VERSION=v4.22.1
 ENV URL=https://github.com/v2ray/v2ray-core/releases/download/${VERSION}/v2ray-linux-arm.zip
 RUN mkdir v2ray &&\ 
-    wget $URL -O - | unzip -d v2ray
+    wget $URL -O v2ray-linux-arm.zip &&\
+    unzip -d v2ray v2ray-linux-arm.zip
 
 
 FROM balenalib/raspberrypi3-alpine:latest-run
