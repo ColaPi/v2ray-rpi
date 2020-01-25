@@ -9,4 +9,5 @@ RUN mkdir v2ray &&\
 
 FROM balenalib/raspberrypi3-alpine:latest-run
 COPY --from=0 /v2ray/v2ray /usr/bin/v2ray
+COPY --from=0 /v2ray/v2ctl /usr/bin/v2ctl
 CMD [ "/usr/bin/v2ray", "-config", "/etc/v2ray/config.json" ]
